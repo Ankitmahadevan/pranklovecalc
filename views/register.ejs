@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title> yelpcamp</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		#bt
+		{
+			width: 100%;
+		}
+		*
+{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html,body{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+header
+{
+ 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://cdn.pixabay.com/photo/2018/01/04/19/43/love-3061483__340.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+  
+}
+		h3
+		{
+			margin-bottom: 20px;
+			color: aliceblue;
+			font-size: 50px;
+		}
+	</style>
+</head>
+
+<body>
+<header>
+			<nav style="background-color: transparent;border:none;: " class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a style="color: aliceblue" class="navbar-brand" href="/">LoveCalc</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+					 <% if(!currentUser){%>
+                        <li><a style="color: aliceblue" href="/login">Login</a></li>
+                       <li><a  style="color: aliceblue" href="/register">Sign Up</a></li>
+                     
+                    <% } else {%>  
+                            <li><a style="color: aliceblue" href="#"><%= currentUser.username%></a></li>
+                            <li><a style="color: aliceblue" href="/logout">Logout</a></li>
+                      <% } %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+	<div style="padding-top:-50px" class="container">
+		<div  class="row">
+			<div style="width:30%;margin:150px auto;">
+				<h3  style="text-align:center;"><strong>Sign Up</strong></h3>
+				<form action="/register" method="post">
+					<div class="form-group">
+						<input type="text" class="form-control" id="exampleInputPassword1" name="name" placeholder="name" required>
+					</div>
+					
+					<div class="form-group">
+						<input type="email" class="form-control" id="exampleInputPassword1" name="username" placeholder="Email" required>
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
+					</div>
+					<button id="bt" type="submit" class="btn btn-primary">Sign Up</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	</header>
+</body>
+
+</html>
