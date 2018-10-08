@@ -7,7 +7,7 @@ var express               = require("express"),
     passportLocalMongoose = require("passport-local-mongoose"),
     nodeMailer            =require("nodemailer")
     
-mongoose.connect("mongodb://ankit:pranklovecalc1@ds125673.mlab.com:25673/pranklovecalc");
+mongoose.connect("mongodb://ankit:prank1@ds125673.mlab.com:25673/pranklovecalc");
 var app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
